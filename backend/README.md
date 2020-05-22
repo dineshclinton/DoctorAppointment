@@ -37,9 +37,9 @@ Then, in a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and v
 
 Or, try [http://127.0.0.1:8000/clinicians/](http://127.0.0.1:8000/clinicians/) to view the index page for Clinicians.
 
-**Note:** The django admin panel is available at `/admin`
+**Note:** The django admin panel is available at `/admin`.
 
+After you migrate, you can create an admin by running 
 ```
-username: firefly
-password: firefly
+python manage.py createsuperuser
 ```
