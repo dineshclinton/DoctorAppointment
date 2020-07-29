@@ -12,6 +12,10 @@ This is meant to be a demonstration of your full-stack coding abilities. This me
 
 Within this repo is a self-contained project reliant on a few technologies — if you're unfamiliar with any of them, it's recommended to take some time to explore before diving in.
 
+You should allocate around 4 hours to dedicate to this task, and submit within 48 hours.
+
+The instructions for the interview can be found [here](INSTRUCTIONS.md)
+
 **Base Requirements**
 
 - Python 3
@@ -28,8 +32,9 @@ Within this repo is a self-contained project reliant on a few technologies — i
 
 The database is SQLite3, but you shouldn't need to worry about that
 
-You should allocate around 4 hours to dedicate to this task, and submit within 48 hours.
+## Submitting Your Solution
 
-The instructions for the interview can be found [here](INSTRUCTIONS.md)
+To get started, please fork this repository to your own Github account. When you're finished and ready to submit your solution, please either include an email link to your fork, or provide your solution as a git bundle over email.
 
 Good luck!
+
