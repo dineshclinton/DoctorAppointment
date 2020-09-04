@@ -36,5 +36,6 @@ The database is SQLite3, but you shouldn't need to worry about that
 
 To get started, please fork this repository to your own Github account. When you're finished and ready to submit your solution, please either include an email link to your fork, or provide your solution as a git bundle over email.
 
-Good luck!
+After you submit your solution, Firefly will follow up to schedule a review session, during which you'll present and discuss your solution with some of our engineering team. You should come prepared to talk through your code, and please feel free to ask any questions you might have.
 
+Good luck!
