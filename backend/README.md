@@ -2,13 +2,16 @@
 
 This Django project provides the API and model definitions for Clinicians and Availabilities
 
-# Getting started
+## Getting started
 
-### 1) Verify that you're using Python version 3.7.7
+
+### Option 1: Local Setup
+
+#### 1) Verify that you're using Python version 3.7.7
 
 e.g. `python --version`
 
-### 2) Install this project's requirements
+#### 2) Install this project's requirements
 
 First, create a virtual environment to isolate our package dependencies locally:
 
@@ -23,7 +26,7 @@ Then,
 python -m pip install -r requirements.txt
 ```
 
-### 2) Run migrations
+#### 2) Run migrations
 
 ```
 python manage.py migrate
@@ -31,9 +34,29 @@ python manage.py migrate
 
 This will initialize your SQLite database, and also seed it with some sample data for Clinicians and Availabilities.
 
-### 3) Start the server with `python manage.py runserver`
+#### 3) Start the server with `python manage.py runserver`
 
-Then, in a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the sample Django start page
+
+### Option 2: Docker based setup
+
+Use the provided Dockerfile with 
+either
+
+```sh
+docker build -t takehome . 
+docker run -t -p 8000:8000 takehome
+```
+
+or 
+
+```sh
+docker-compose build
+docker-compose up -d
+```
+
+## Post Setup
+
+In a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the sample Django start page
 
 Or, try [http://127.0.0.1:8000/clinicians/](http://127.0.0.1:8000/clinicians/) to view the index page for Clinicians.
 
