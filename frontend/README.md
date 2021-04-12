@@ -35,4 +35,8 @@ or
 yarn start
 ```
 
-Note: the url of the backend server is defined by the `proxy` field in `package.json`. It defaults to `localhost:8000`
+### Communicating with the API
+
+For an example, see `fetchClinicians` in `frontend/src/requests.js`
+
+The url of the backend server is defined by the `proxy` field in `package.json`. It defaults to `localhost:8000`.
