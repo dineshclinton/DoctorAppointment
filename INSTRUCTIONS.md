@@ -1,35 +1,37 @@
-# Firefly Health Take Home Interview
+# Instructions
 
-Hello and welcome to Firefly Health's Take Home Interview!
+For this project, you'll be building a simple system which allows patients to book appointments with clinicians.
 
-In this repo is the scaffolding to a simple system for patients to book appointments with clinicians.
+After following the setup instructions, you'll be able to see a very simple view of appointment slots in your browser.
 
-Here's what is currently in the repo
+To complete this project, you'll add a few more features:
 
-**Back End**
-
-- A working Django / Django Rest Framework server, with storage in SQLite3
-- A Clinician Django Model, for tracking clinicans
-- An Availability Django Model, for tracking available time slots for a specific clinician
-- An endpoint for listing all of the clinicians
-
-**Front End**
-
-- A working create-react-app server with axios
-
-You can find detailed READMEs for the back end and front end codebases within their respective subdirectories: [backend](/backend/README.md) and [frontend](/frontend/README.md)
-
----
-
-Unfortunately, it's not complete, and there are some features that need to be added.
-
-Specifically:
-
-- The user should be able to see which availability slots are open for booking
-- The user should then be able to book a slot for an appointment
+- The user should be able to see which availability slots are available for booking
+- The user should be able to book an available slot for an appointment
 - The user should be able to see which appointments they have booked
 - Finally, the user should be able to cancel a booked appointment.
 
-This challenge will require creating new Django Models, creating new React Components, and creating new endpoints, among other things.
+
+Here's what is currently in the repo:
+
+**Back-end**
+
+The [/backend](/backend/README.md) subdirectory contains:
+
+- A working Django / Django REST Framework server
+- A Clinician model, which represents a member of the Firefly clinical team
+- An Availability model, which represents an individual clinician's availability time slots
+- An endpoint for listing all of the clinicians
+
+**Front-end**
+
+The [/frontend](/frontend/README.md) subdirectory contains:
+
+
+- A working create-react-app server with axios
+- A React component which displays a simple view of all availabilities
+
+
+Both subdirectories contain a README with more detailed instructions for getting the server and front-end UI up and running.
 
 Good luck!
