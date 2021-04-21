@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from clinicians.models import Clinician
+from clinicians.models import Appointment, Clinician
 
 
 class ClinicianSerializer(serializers.HyperlinkedModelSerializer):
@@ -11,5 +11,5 @@ class ClinicianSerializer(serializers.HyperlinkedModelSerializer):
 
 class AppointmentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
-        model = Clinician
+        model = Appointment
         fields = ['availability', 'clinician', 'status']
