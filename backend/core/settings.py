@@ -31,8 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'clinicians.apps.CliniciansConfig',
     'availabilities.apps.AvailabilitiesConfig',
+    'clinicians.apps.CliniciansConfig',
+    'appointments.apps.AppointmentsConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
