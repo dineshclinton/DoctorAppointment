@@ -6,36 +6,45 @@ from django.db import migrations
 def seed_clinician_availabilities(apps, schema_editor):
     Clinician = apps.get_model("clinicians", "Clinician")
     Availability = apps.get_model("availabilities", "Availability")
-    Appointment = apps.get_model("clinicians", "Appointment")
+    Appointment = apps.get_model("appointments", "Appointment")
 
     availability_1 = Availability.objects.first()
-    cynthia = Clinician.objects.filter(national_provider_identifier="1234567890").first()
+    cynthia = Clinician.objects.get(
+        national_provider_identifier="1234567890"
+    )
     appointment = Appointment.objects.create(
-        availability=availability_1, clinician=cynthia, status="available",
+        availability=availability_1,
+        clinician=cynthia,
     )
     appointment.save()
 
     availability_2 = Availability.objects.get(pk=2)
-    carl = Clinician.objects.filter(national_provider_identifier="0987654321").first()
+    carl = Clinician.objects.get(
+        national_provider_identifier="0987654321"
+    )
     appointment = Appointment.objects.create(
-        availability=availability_2, clinician=carl, status="available",
+        availability=availability_2,
+        clinician=carl,
     )
     appointment.save()
 
     availability_4 = Availability.objects.get(pk=4)
     appointment = Appointment.objects.create(
-        availability=availability_4, clinician=cynthia, status="available",
+        availability=availability_4,
+        clinician=cynthia,
     )
     appointment.save()
 
     appointment = Appointment.objects.create(
-        availability=availability_4, clinician=carl, status="available",
+        availability=availability_4,
+        clinician=carl,
     )
     appointment.save()
 
     availability_5 = Availability.objects.get(pk=5)
     appointment = Appointment.objects.create(
-        availability=availability_5, clinician=carl, status="available",
+        availability=availability_5,
+        clinician=carl,
     )
     appointment.save()
 
@@ -43,6 +52,7 @@ def seed_clinician_availabilities(apps, schema_editor):
 class Migration(migrations.Migration):
 
     dependencies = [
+        ('appointments', '0002_appointment_clinician'),
         ('clinicians', '0002_auto_20210421_2217'),
     ]
 
