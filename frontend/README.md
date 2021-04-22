@@ -1,41 +1,32 @@
-# Firefly Health Take Home Front-End
+# Front-end setup
 
-### Prerequisites
+This front-end contains a basic React app which displays a list of clinicians.
 
-- Node 10 or later
-- A node package manager (npm or yarn)
-
-### Install Packages
-
-`cd` to the `frontend` folder of this repository
-
-Depending on your package manager either
-
-```
-npm install
-```
-
-or
+## Installing requirements
 
 ```
 yarn install
 ```
 
-### Run Server
-
-You can start this server with either
+or
 
 ```
-npm run start
+npm install
 ```
 
-or 
+## Run server
 
 ```
 yarn start
 ```
 
-### Communicating with the API
+or
+
+```
+npm run start
+```
+
+## Communicating with the API
 
 For an example, see `fetchClinicians` in `frontend/src/requests.js`
 
