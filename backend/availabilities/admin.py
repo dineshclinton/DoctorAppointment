@@ -4,8 +4,7 @@ from .models import Availability
 
 
 class AvailabilityAdmin(admin.ModelAdmin):
-    class Meta:
-        verbose_name_plural = "Availabilities"
+    pass
 
 
 admin.site.register(Availability, AvailabilityAdmin)
