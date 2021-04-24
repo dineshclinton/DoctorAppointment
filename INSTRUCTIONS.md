@@ -13,8 +13,6 @@ The [/backend](/backend/README.md) subdirectory contains:
 - A working Django / Django REST Framework server
 - A Clinician model, which represents a member of the Firefly clinical team
 - An Availability model, which represents availability time slots
-- An Appointment model, which represents availability time slots for a clinician which is either already booked
-  or is available for booking
 - Endpoints for listing all of the clinicians, availabilities and appointments
 
 **Front-end**
