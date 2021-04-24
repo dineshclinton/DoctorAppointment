@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Availability
+
+
+class AvailabilityAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Availability, AvailabilityAdmin)
