@@ -10,11 +10,11 @@ Please make sure you read through this document thoroughly. Once you are ready, 
 
 For this project, you'll be building a miniature version of one of Firefly's real tools. You'll also be using a tech stack that is very similar to Firefly's.
 
-Please allocate around 4 hours to dedicate to this project. If it ends up taking longer, we just ask that you submit your solution within 48 hours of getting started.
+We ask that you dedicate no more than 4 hours to this project and submit your solution within 2-3 days.  After receiving your solution, Firefly will schedule a review session with our engineering team.
 
-After receiving your solution, Firefly will schedule a review session, during which you'll present and discuss your solution with some members of our engineering team.
+Our primary goal for this exercise is to discuss your approach and design decisions.  These technologies may be entirely new to you, and we don't expect a perfect solution.  
 
-This project is meant to be a realistic demonstration of your full-stack coding abilities. This means that it is perfectly fine to Google, refer to documentation / Stack Overflow, and even install packages that you find useful.
+This is also not meant to be a test of your familiarity with specific tools or technologies.  It is perfectly fine to Google, refer to documentation / Stack Overflow, and even install packages that you find useful.  Likewise, its fine to leverage workaround if you get stuck on a specific technology.  If this happens, please let us know so we can do better next time!
 
 ## Base requirements
 
