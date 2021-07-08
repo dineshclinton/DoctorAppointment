@@ -20,7 +20,7 @@ This is also not meant to be a test of your familiarity with specific tools or t
 
 Within this repo is a self-contained project reliant on a few technologies — if you're unfamiliar with any of them, it's recommended to take some time to explore before diving in. We've included some tips and links to documentation below.
 
-### 1) [Django](https://docs.djangoproject.com/en/3.0/)
+### 1) [Django](https://docs.djangoproject.com/en/3.2/)
 
 You'll want to be comfortable building basic Models and Views. Django's [introduction](https://www.djangoproject.com/start/) is a great place to start if you're new to it.
 
