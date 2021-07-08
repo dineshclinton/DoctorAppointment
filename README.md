@@ -50,7 +50,7 @@ docker-compose build
 docker-compose up
 ```
 
-This will initialize your SQLite database, and also seed it with some sample data for Patients, Clinicians, Availabilities and Appointments.
+This will initialize your SQLite database, and also seed it with some sample data for Clinicians, Availabilities and Appointments.
 
 This should also start the server on port 8000.
 
@@ -63,8 +63,6 @@ can be created with :
 ```shell
 docker-compose exec web python manage.py createsuperuser
 ```
-
-A postman collection is also available in the repo that contains samples for API invocations.
 
 The front end is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
 
