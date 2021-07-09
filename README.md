@@ -57,14 +57,13 @@ This should also start the server on port 8000.
 In a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the sample Django start page
 
 
-The Django admin panel is available at `http://127.0.0.1:8000/admin`. The credentials for the admin panel
-can be created with : 
+The Django admin panel is available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). The credentials for the admin panel can be created with : 
 
 ```shell
 docker-compose exec web python manage.py createsuperuser
 ```
 
-A postman collection is also available in the repo that contains samples for API invocations.
+If you are already familiar with postman - a postman collection is available in the repo with sample API invocations. The django admin interface is just as useful to explore different APIs.
 
 The front end is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
 
