@@ -20,6 +20,7 @@ class Migration(migrations.Migration):
             ],
             options={
                 'ordering': ['date', 'start_time'],
+                'verbose_name_plural': 'availabilities'
             },
         ),
     ]

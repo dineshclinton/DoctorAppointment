@@ -16,19 +16,11 @@ Our primary goal for this exercise is to discuss your approach and design decisi
 
 This is also not meant to be a test of your familiarity with specific tools or technologies.  It is perfectly fine to Google, refer to documentation / Stack Overflow, and even install packages that you find useful.  Likewise, its fine to leverage workaround if you get stuck on a specific technology.  If this happens, please let us know so we can do better next time!
 
-## Base requirements
-
-The starting instructions contain detailed steps to set up both the front-end and back-end. To make that setup easier, have the following tools installed before starting:
-
-- [Python 3](https://www.python.org/downloads/)
-- [Node](https://nodejs.org/en/download/), version 10 (at least)
-- [npm](https://docs.npmjs.com/) or [yarn](https://yarnpkg.com/getting-started)
-
 ## The Stack / Frameworks
 
 Within this repo is a self-contained project reliant on a few technologies — if you're unfamiliar with any of them, it's recommended to take some time to explore before diving in. We've included some tips and links to documentation below.
 
-### 1) [Django](https://docs.djangoproject.com/en/3.0/)
+### 1) [Django](https://docs.djangoproject.com/en/3.2/)
 
 You'll want to be comfortable building basic Models and Views. Django's [introduction](https://www.djangoproject.com/start/) is a great place to start if you're new to it.
 
@@ -43,6 +35,45 @@ React's [Getting started](https://reactjs.org/docs/getting-started.html) page of
 The database is SQLite3, but you shouldn't need to worry about that.
 
 ## Getting started and submitting your solution
+
+
+### Base requirements
+
+Have the following tools installed before starting:
+
+- [Docker](https://www.docker.com/products/docker-desktop)
+
+### Getting started
+
+```shell
+docker-compose build
+docker-compose up
+```
+
+This will initialize your SQLite database, and also seed it with some sample data for Clinicians, Availabilities and Appointments.
+
+This should also start the server on port 8000.
+
+In a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the sample Django start page
+
+
+The Django admin panel is available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). The credentials for the admin panel can be created with : 
+
+```shell
+docker-compose exec web python manage.py createsuperuser
+```
+
+If you are already familiar with postman - a postman collection is available in the repo with sample API invocations. The django admin interface is just as useful to explore different APIs.
+
+The front end is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
+
+### Communicating with the API
+
+For an example, see `fetchClinicians` in `frontend/src/requests.js`
+
+The url of the backend server is defined by the `proxy` field in `package.json`. It defaults to `localhost:8000`.
+
+### Submitting your solution
 
 Please fork this repository to your own GitHub account.
 
