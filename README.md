@@ -70,21 +70,11 @@ To get the application up and running:
 docker compose up --build
 ```
 
+*NOTE:* the Docker step above sometimes takes a long time (>10 minutes) to install the frontend's requirements for the first time. If you are familiar with [yarn](https://yarnpkg.com/), you can cut down on this time by installing those requirements yourself before running the Docker command. To install them yourself, run:  `cd frontend && yarn install`.
+
 Once the application is started, in a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the Django REST Framework Api Root page. From here, you can explore the API.
 
 The frontend is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
-
-## Working with Docker Compose
-
-For an introduction to this tool, check out the [Docker Compose](https://docs.docker.com/compose/) docs.
-
-The backend and frontend servers run in containers defined by docker-compose.yml: the `web` container for the backend Django app and the `frontend` container for the frontend React app.
-
-To execute a command in a container:
-
-```
-docker compose exec CONTAINER_NAME YOUR_COMMAND
-```
 
 ## Backend
 
@@ -116,6 +106,20 @@ docker compose exec web python manage.py migrate
 The frontend app runs was built using React, using the standard `npx create-react-app`.
 
 App.js is a good place to start if you're new to the structure of a React application; the main functionality of the app lives in this file and the component files (/src/components/).
+
+
+## Working with Docker Compose
+
+For an introduction to this tool, check out the [Docker Compose](https://docs.docker.com/compose/) docs.
+
+The backend and frontend servers run in containers defined by docker-compose.yml: the `web` container for the backend Django app and the `frontend` container for the frontend React app.
+
+To execute a command in a container:
+
+```shell
+docker compose exec CONTAINER_NAME YOUR_COMMAND
+```
+
 
 ## Installing additional dependencies
 
