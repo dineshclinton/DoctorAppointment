@@ -1,84 +1,120 @@
-# Firefly Health Take-home Interview
+# Introduction
 
-Hello and thank you for interviewing with Firefly!
+Welcome to Firefly's take-home exercise!
 
-This document is not the interview — it is a "pre-brief" to make sure your environment and expectations are properly calibrated before beginning.
+In this exercise, you'll be working on and adding features to an appointment booking system similar to the one we use at Firefly.
 
-Please make sure you read through this document thoroughly. Once you are ready, the detailed prompt can be found in [INSTRUCTIONS.md](INSTRUCTIONS.md)
+This exercise will test you on your ability to work with an existing, full-stack codebase. The technologies used in this exercise are [Django](https://www.djangoproject.com/)/[Django REST Framework](https://www.django-rest-framework.org/), [React](https://reactjs.org/), Postgres, and [Docker Compose](https://docs.docker.com/compose/). This is a tech-stack similar to what we use here at Firefly, but specific knowledge about these technologies should not be necessary and you should be able to find examples of everything you need in the existing codebase.
 
-## What to expect
+We ask that you dedicate no more than 4 hours to this exercise. These technologies may be entirely new to you, and we don't expect a perfect solution. It is perfectly fine to Google, refer to documentation / Stack Overflow, and even install packages that you find useful. Likewise, its fine to leverage workarounds if you get stuck on a specific technology. If this happens, please let us know so we can do better next time!
 
-For this project, you'll be building a miniature version of one of Firefly's real tools. You'll also be using a tech stack that is very similar to Firefly's.
+## What we're looking for
 
-We ask that you dedicate no more than 4 hours to this project and submit your solution within 2-3 days.  After receiving your solution, Firefly will schedule a review session with our engineering team.
+- Can you work with an existing codebase?
+- Can you think about the full stack, and connect an API to a user interface?
+- Can you produce code that is readable and easily reviewable?
+- Can you make design choices and discuss the tradeoffs with us?
 
-Our primary goal for this exercise is to discuss your approach and design decisions.  These technologies may be entirely new to you, and we don't expect a perfect solution.  
+## What we are not looking for
 
-This is also not meant to be a test of your familiarity with specific tools or technologies.  It is perfectly fine to Google, refer to documentation / Stack Overflow, and even install packages that you find useful.  Likewise, its fine to leverage workaround if you get stuck on a specific technology.  If this happens, please let us know so we can do better next time!
+- Mastery of specific frameworks/languages/tools
+- High-level design skills (other sections of the interview loop will test for this)
 
-## The Stack / Frameworks
+## What you'll start with
 
-Within this repo is a self-contained project reliant on a few technologies — if you're unfamiliar with any of them, it's recommended to take some time to explore before diving in. We've included some tips and links to documentation below.
+This exercise involves two data models: Patients and Appointments. Appointments represent blocks of time on a doctor's schedule, which can be booked by a Patient. You will be working to allow the user of the system to book Appointments for Patients.
 
-### 1) [Django](https://docs.djangoproject.com/en/3.2/)
+On the backend, you'll start with:
 
-You'll want to be comfortable building basic Models and Views. Django's [introduction](https://www.djangoproject.com/start/) is a great place to start if you're new to it.
+- Appointment and Patient models
+- Appointment Create/Read/Update/Delete (CRUD) API
+- Patient CRUD API
 
-### 2) [Django REST Framework](https://www.django-rest-framework.org/)
+On the front-end, you'll start with:
 
-The [Example](https://www.django-rest-framework.org/#example) page  is a good starting place.
+- A component which allows creating a new Appointment
+- A component which lists Appointments
+- A component which lists Patients
 
-### 3) [React](https://reactjs.org)
+# Your assignment
 
-React's [Getting started](https://reactjs.org/docs/getting-started.html) page offers a few ways to get familiar with the library. There's no requirement to add any other front-end libraries.
+On the backend, we'd like you to add...
 
-The database is SQLite3, but you shouldn't need to worry about that.
+- Model changes and API logic which allow booking an appointment (associating a Patient with an Appointment)
 
-## Getting started and submitting your solution
+On the front-end, we'd like you to add...
 
+- A component to allow creating a new Patient
+- A component which allows the user of the system to book an Appointment for a Patient
+- A component to list Appointments and, if an Appointment is booked, each Appointment's associated Patient
 
-### Base requirements
+## A few opportunities for design choices
 
-Have the following tools installed before starting:
+We don't expect you to address all of these things in your solution, but here are a few things you might want to think about:
 
-- [Docker](https://www.docker.com/products/docker-desktop)
+- How do you represent a booked Appointment, in your data model and in the frontend?
+- How can we prevent a Patient from booking an already-booked Appointment?
+- How might Appointments eventually become specific to one doctor vs. another doctor?
+- What is the user's experience around booking an Appointment?
+- Is it possible to delete Patients and/or Appointments? If so, what are the effects of doing so?
 
-### Getting started
+# Getting started
+
+The existing code in this repo should get you up and running with a web app you can view in your local browser.
+
+The entire stack is built and run with the Docker and Docker Compose tools. If you don't already have those installed, you can follow the instructions at: https://github.com/docker/compose-cli#getting-started.
+
+To get the application up and running:
 
 ```shell
-docker-compose build
-docker-compose up
+docker compose up --build
 ```
 
-This will initialize your SQLite database, and also seed it with some sample data for Clinicians, Availabilities and Appointments.
+Once the application is started, in a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the Django REST Framework Api Root page. From here, you can explore the API.
 
-This should also start the server on port 8000.
+The frontend is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
 
-In a browser, visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) and verify that you see the sample Django start page
+## Backend
 
+If you are new to Django, you can focus on the `appointment_booking` directory.
 
-The Django admin panel is available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin). The credentials for the admin panel can be created with : 
+The backend runs using Django and Docker. You can read more about how these work together at https://docs.docker.com/samples/django/.
+
+The Django admin site is available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and is a useful way to explore your models and data. You can read more about it [here](https://docs.djangoproject.com/en/3.2/ref/contrib/admin/). The credentials for the admin panel can be created with:
 
 ```shell
-docker-compose exec web python manage.py createsuperuser
+docker compose exec web python manage.py createsuperuser
 ```
 
-If you are already familiar with postman - a postman collection is available in the repo with sample API invocations. The django admin interface is just as useful to explore different APIs.
+You can run backend tests with:
 
-The front end is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
+```shell
+docker compose exec web python manage.py test
+```
 
-### Communicating with the API
+When making changes to models in Django, you'll also need to run some commands to make and run database migrations:
 
-For an example, see `fetchClinicians` in `frontend/src/requests.js`
+```shell
+docker compose exec web python manage.py makemigrations
+docker compose exec web python manage.py migrate
+```
 
-The url of the backend server is defined by the `proxy` field in `package.json`. It defaults to `localhost:8000`.
+## Frontend
 
-### Submitting your solution
+The frontend app runs was built using React, using the standard `npx create-react-app`.
 
-Please fork this repository to your own GitHub account.
+App.js is a good place to start if you're new to the structure of a React application; the main functionality of the app lives in this file and the component files (/src/components/).
 
-When you're finished and ready to submit your solution, please either include an email link to your fork, or provide your solution as a git bundle over email.
+## Installing additional dependencies
 
-The instructions for the project can be found in [INSTRUCTIONS.md](INSTRUCTIONS.md).
+If you need to add additional dependencies that you find useful, you will need to install the dependencies after you have edited `package.json` or `requirements.txt`.
 
-Good luck!
+For the backend, use:
+```shell
+docker compose exec web pip install -r requirements.txt
+```
+
+For the frontend, use:
+```shell
+docker compose exec frontend yarn install
+```
