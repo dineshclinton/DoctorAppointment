@@ -74,6 +74,18 @@ Once the application is started, in a browser, visit [http://127.0.0.1:8000/](ht
 
 The frontend is available at [http://127.0.0.1:3000/](http://127.0.0.1:3000/).
 
+## Working with Docker Compose
+
+For an introduction to this tool, check out the [Docker Compose](https://docs.docker.com/compose/) docs.
+
+The backend and frontend servers run in containers defined by docker-compose.yml: the `web` container for the backend Django app and the `frontend` container for the frontend React app.
+
+To execute a command in a container:
+
+```
+docker compose exec CONTAINER_NAME YOUR_COMMAND
+```
+
 ## Backend
 
 If you are new to Django, you can focus on the `appointment_booking` directory.
