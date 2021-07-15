@@ -1,26 +1,13 @@
+# syntax=docker/dockerfile:1
 FROM python:3.7
-
-# Enable output to console
-ENV PYTHONUNBUFFERED 1
-
-RUN apt-get update \
-    && apt-get -y install build-essential libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
-
-
+ENV PYTHONUNBUFFERED=1
 WORKDIR /code
-
-RUN pip install gunicorn
-
-# Install Dependencies
-COPY requirements.txt requirements.txt
+COPY requirements.txt /code/
 RUN pip install -r requirements.txt
-
 COPY . /code/
-
+RUN chmod +x ./wait-for-it.sh
 RUN chmod +x ./entry.sh
-
 EXPOSE 8000
+CMD ["./wait-for-it.sh", "db:5432", "--", "/code/entry.sh"]
 
-CMD ["/code/entry.sh"]
 

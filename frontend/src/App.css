@@ -1,45 +1,13 @@
-#root {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  font-family: "Cabin", sans-serif;
-  font-size: 14px;
-}
-
 .App {
-  flex: 1;
-  max-width: 38rem;
+  padding: 1em;
 }
 
-.logo {
-  height: 2rem;
+.App-logo img {
+  height: 20vmin;
+  max-width: 200px;
   pointer-events: none;
 }
 
-.logo-wrapper {
-  margin: 2rem;
-}
-
-.instructions {
-  margin: 2rem;
-}
-
-.response {
-  background-color: #f3f3f3;
-  font-family: "Inconsolata", monospace;
-  margin: 1.5rem;
-  padding: 1.5rem;
-  max-height: 15rem;
-  overflow-y: auto;
-}
-
-::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 7px;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+.App-link {
+  color: #61dafb;
 }

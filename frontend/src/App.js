@@ -1,42 +1,45 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
 import logo from "./logo.svg";
+import "./App.css";
+import CreateAppointment from "./components/CreateAppointment";
+import AppointmentsList from "./components/AppointmentsList";
+import PatientsList from "./components/PatientsList";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
-import { fetchClinicians } from "./requests";
+export const API_BASE_URL = "http://localhost:8000";
 
-function App() {
-  const [clinicians, setClinicians] = useState(null);
+const fetchAppointments = async () => {
+  try {
+    const result = await axios.get(API_BASE_URL + "/appointments/");
+    return result.data;
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
+};
+
+const App = () => {
+  const [appointments, setAppointments] = useState([]);
+
+  const refetchAppointments = async () => {
+    const appointments = await fetchAppointments();
+    setAppointments(appointments);
+  };
+
   useEffect(() => {
-    async function getClinicians() {
-      const clinicianData = await fetchClinicians();
-      setClinicians(clinicianData);
-    }
-
-    getClinicians();
+    refetchAppointments();
   }, []);
+
   return (
     <div className="App">
-      <div className="logo-wrapper">
-        <img src={logo} className="logo" alt="logo" />
+      <div className="App-logo">
+        <img src={logo} alt="logo" />
       </div>
-      <div className="instructions">
-        <h2>Welcome to Firefly's Take Home Interview</h2>
-        <p>For the front-end portion, please implement two components</p>
-        <ul>
-          <li>
-            A component that lets you book an appointment, based on clinician
-            availability.
-          </li>
-          <li>
-            A component that displays the appointments that are currently
-            scheduled. This should also allow scheduled appointments to be
-            cancelled.
-          </li>
-        </ul>
-      </div>
-      <pre className="response">{JSON.stringify(clinicians, null, 2)}</pre>
+      <CreateAppointment refetchAppointments={refetchAppointments} />
+      <AppointmentsList appointments={appointments} />
+      <PatientsList />
     </div>
   );
-}
+};
 
 export default App;
