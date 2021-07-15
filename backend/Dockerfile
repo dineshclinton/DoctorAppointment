@@ -5,9 +5,8 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
-RUN chmod +x ./wait-for-it.sh
 RUN chmod +x ./entry.sh
 EXPOSE 8000
-CMD ["./wait-for-it.sh", "db:5432", "--", "/code/entry.sh"]
+CMD ["/code/entry.sh"]
 
 
