@@ -4,7 +4,7 @@ Welcome to Firefly's take-home exercise!
 
 In this exercise, you'll be working on and adding features to an appointment booking system similar to the one we use at Firefly.
 
-This exercise will test you on your ability to work with an existing, full-stack codebase. The technologies used in this exercise are [Django](https://www.djangoproject.com/)/[Django REST Framework](https://www.django-rest-framework.org/), [React](https://reactjs.org/), Postgres, and [Docker Compose](https://docs.docker.com/compose/). This is a tech-stack similar to what we use here at Firefly, but specific knowledge about these technologies should not be necessary and you should be able to find examples of everything you need in the existing codebase.
+This exercise will test you on your ability to work with an existing, full-stack codebase. The technologies used in this exercise are [Django](https://www.djangoproject.com/)/[Django REST Framework](https://www.django-rest-framework.org/), [React](https://reactjs.org/), and [Docker Compose](https://docs.docker.com/compose/). This is a tech-stack similar to what we use here at Firefly, but specific knowledge about these technologies should not be necessary and you should be able to find examples of everything you need in the existing codebase.
 
 We ask that you dedicate no more than 4 hours to this exercise. These technologies may be entirely new to you, and we don't expect a perfect solution. It is perfectly fine to Google, refer to documentation / Stack Overflow, and even install packages that you find useful. Likewise, its fine to leverage workarounds if you get stuck on a specific technology. If this happens, please let us know so we can do better next time!
 
