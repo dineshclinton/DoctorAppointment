@@ -24,10 +24,11 @@ class AppointmentViewSet(viewsets.ModelViewSet):
     queryset = Appointment.objects.all()
     serializer_class = AppointmentSerializer
 
-    @action(detail=True, methods=["post"])
+    @action(detail=True, methods=["patch"])
     def book(self, request, pk=None):
         appointment = Appointment.objects.get(pk=pk)
         patient = Patient.objects.get(pk=request.data.get("patient_pk"))
-        # TODO: implement appointment booking logic
         logger.info("Booking appointment %s for patient %s", appointment.pk, patient.pk)
-        return Response(status=status.HTTP_200_OK)
+        # TODO: implement appointment booking logic
+        serializer = AppointmentSerializer(appointment)
+        return Response(serializer.data, status=status.HTTP_200_OK)
