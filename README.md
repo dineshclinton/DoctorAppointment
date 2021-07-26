@@ -82,7 +82,7 @@ If you are new to Django, you can focus on the `appointment_booking` directory.
 
 The backend runs using Django and Docker. You can read more about how these work together at https://docs.docker.com/samples/django/.
 
-The base URL for the backend is [http://127.0.0.1:8000/](http://127.0.0.1:8000/). The Api Root page there is a good way to explore the API in the browser. As an example, you can click into "appointments" at [http://127.0.0.1:8000/appointments/](http://127.0.0.1:8000/appointments/) to view a `GET /appointments/` request.
+The base URL for the backend is [http://127.0.0.1:8000/](http://127.0.0.1:8000/). The Api Root page there is a good way to explore the API in the browser. As an example, you can click into "appointments" at [http://127.0.0.1:8000/appointments/](http://127.0.0.1:8000/appointments/) to view a `GET /appointments/` request. To make a request to the existing (but incomplete) endpoint to book an appointment, make a `PATCH` request to [http://127.0.0.1:8000/appointments/{appointment.pk}/book/]([http://127.0.0.1:8000/appointments/{appointment.pk}/book/])
 
 The Django admin site is available at [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin) and is a useful way to explore your models and data. You can read more about it [here](https://docs.djangoproject.com/en/3.2/ref/contrib/admin/). The credentials for the admin panel can be created with:
 
