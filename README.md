@@ -62,9 +62,9 @@ We don't expect you to address all of these things in your solution, but here ar
 
 The existing code in this repo should get you up and running with a web app you can view in your local browser.
 
-The entire stack is built and run with the Docker and Docker Compose tools. If you don't already have those installed, you can follow the instructions at: https://github.com/docker/compose-cli#getting-started.
+The entire stack is built and run with the Docker and Docker Compose tools. For Windows and macOS, [installing Docker Desktop](https://www.docker.com/products/docker-desktop) is all you'll need to do for this part. For Linux, you'll need to install both Docker Desktop and a separate Docker Compose binary ([instructions](https://github.com/docker/compose/tree/v2#where-to-get-docker-compose)).
 
-To get the application up and running:
+To get the application up and running, first start Docker Desktop. Then:
 
 ```shell
 docker compose up --build
