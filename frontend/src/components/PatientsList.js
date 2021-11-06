@@ -26,13 +26,11 @@ const PatientsList = () => {
     <>
       <h2>Patients</h2>
       <p>{patients.length} patient(s)</p>
-      <p>
         <ul>
           {patients.map((patient) => {
-            return <li>{JSON.stringify(patient)}</li>;
+            return <li key={patient.pk}>{patient.first_name} {patient.last_name}</li>;
           })}
         </ul>
-      </p>
     </>
   );
 };

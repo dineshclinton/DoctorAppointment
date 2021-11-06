@@ -5,12 +5,23 @@ import AppointmentsList from "./components/AppointmentsList";
 import PatientsList from "./components/PatientsList";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import CreatePatient from "./components/CreatePatient";
 
 export const API_BASE_URL = "http://localhost:8000";
 
 const fetchAppointments = async () => {
   try {
-    const result = await axios.get(API_BASE_URL + "/appointments/");
+    const result = await axios.get(API_BASE_URL + "/appointments/details");
+    return result.data;
+  } catch (e) {
+    console.error(e);
+    return [];
+  }
+};
+
+const fetchPatients = async () => {
+  try {
+    const result = await axios.get(API_BASE_URL + "/patients/");
     return result.data;
   } catch (e) {
     console.error(e);
@@ -21,13 +32,21 @@ const fetchAppointments = async () => {
 const App = () => {
   const [appointments, setAppointments] = useState([]);
 
+  const [patients, setPatients] = useState([]);
+
   const refetchAppointments = async () => {
-    const appointments = await fetchAppointments();
-    setAppointments(appointments);
+    const appointment = await fetchAppointments();
+    setAppointments(appointment);
+  };
+
+  const refetchPatients = async () => {
+    const patient = await fetchPatients();
+    setPatients(patient);
   };
 
   useEffect(() => {
     refetchAppointments();
+    refetchPatients();
   }, []);
 
   return (
@@ -37,7 +56,8 @@ const App = () => {
       </div>
       <CreateAppointment refetchAppointments={refetchAppointments} />
       <AppointmentsList appointments={appointments} />
-      <PatientsList />
+      <CreatePatient refetchPatients={refetchPatients} />
+      <PatientsList patients={patients} />
     </div>
   );
 };
