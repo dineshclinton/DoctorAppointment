@@ -72,8 +72,6 @@ class AppointmentSerializer(serializers.ModelSerializer):
         serializedData = AppointmentSerializer(data)
 
         concurrentAppointment = Appointment.objects.filter(doctor_availability = doctorAvailability.data['pk']).filter(Q(Q(start_time__lt=serializedData['start_time'].value) & Q(end_time__gt=serializedData['start_time'].value)) | Q(Q(start_time__lt=serializedData['end_time'].value) & Q(end_time__gt=serializedData['end_time'].value)) | Q(Q(start_time = serializedData['start_time'].value)) | Q(end_time = serializedData['end_time'].value))
-        #.filter(Q(start_time__range=[serializedData['start_time'].value, serializedData['end_time'].value]) | Q(end_time__range=[serializedData['start_time'].value, serializedData['end_time'].value]))
-        
         
         if concurrentAppointment.count() > 0 :
             raise serializers.ValidationError("patient appointment in this time slot is already booked, please revisit the available time slot")
